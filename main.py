@@ -55,3 +55,15 @@ if json_data is not None:
 else: 
     # 파일이 존재하지 않는 경우
     print("파일이 없음")
+
+def update_json(update_function):
+    try: 
+        with open(file_path, 'r+') as file:
+            data = json.load(file)
+            update_function(data)
+            file.seek(0)
+            json.dump(data, file, indent=4)
+            file.truncate()
+    except FileNotFoundError:
+        print("파일을 찾지 못함")
+        create_json({})
