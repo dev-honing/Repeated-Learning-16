@@ -10,10 +10,10 @@ file_path = 'data/data.json'
 # 함수 작성해보기
 def update_function(data):
     data.clear()
+    data.update({"os": "Windows"})
 
-def delete_function(data):
-    # 내용
-    return
+# def delete_function(data):
+
 
 # JSON 생성 함수
 def create_json(data):
@@ -84,3 +84,6 @@ def delete_json(delete_function):
             file.truncate() # 파일의 현재 위치 이후의 내용을 삭제
     except FileNotFoundError:
         print("파일을 찾지 못함")
+
+# delete_json 함수 호출 및 데이터 삭제
+# delete_json(delete_function)
