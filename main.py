@@ -91,3 +91,15 @@ def delete_json(delete_function):
 
 # delete_json 함수 호출 및 데이터 삭제
 delete_json(delete_function)
+
+
+# __name__: 현재의 모듈
+# __main__: 실행되는 스크립트 파일
+if __name__ == "__main__":
+    {
+        "items": [
+
+        ]
+    }
+    create_data = {"items": []}
+    create_json(create_data) # JSON 파일 생성 및 데이터 쓰기
