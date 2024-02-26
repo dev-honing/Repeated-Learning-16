@@ -77,10 +77,10 @@ update_json(update_function)
 def delete_json(delete_function):
     try:
         with open(file_path, 'r+') as file:
-            data =json.load(file)
+            data =json.load(file) # 파일 내용을 Python 데이터 타입으로 변환
             delete_function(data)
-            file.seek(0)
-            json.dump(data, file, indent=4)
-            file.truncate()
+            file.seek(0) # 파일의 처음으로 커서를 이동
+            json.dump(data, file, indent=4) # 수정된 data를 다시 JSON 형태로 파일에 작성
+            file.truncate() # 파일의 현재 위치 이후의 내용을 삭제
     except FileNotFoundError:
         print("파일을 찾지 못함")
