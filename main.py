@@ -104,7 +104,10 @@ if __name__ == "__main__":
     create_data = {"items": []}
     create_json(create_data) # JSON 파일 생성 및 데이터 쓰기
 
-    #Update 예제: 새 아이템 추가
+    # Update 예제: 새 아이템 추가
     def add_item(data):
         data["items"].append({"name": "BHN", "ID": "bhn1997", "Gmail": "dev.honing@gmail.com"})
     update_json(add_item) # JSON 파일 업데이트
+
+    # Read 예제
+    print(read_json()) # JSON 파일 읽기
