@@ -58,12 +58,16 @@ else:
 
 def update_json(update_function):
     try: 
+        # 'r+' 모드는 읽기와 쓰기를 모두 할 수 있는 모드로, 권한이 많기 때문에 남용하면 위험하다.
         with open(file_path, 'r+') as file:
-            data = json.load(file)
-            update_function(data)
-            file.seek(0)
-            json.dump(data, file, indent=4)
-            file.truncate()
+            data = json.load(file) # 파일의 내용을 읽어서, Python 데이터 타입으로 변환
+            
+            update_function(data) # 인자로 받은 업데이트 함수를 호출해 data를 업데이트
+            # Python도 JavaScript와 동일하게 인터프리터이기에 seek, truncate처럼 위에서 아래로 순차적으로 읽는 특징을 활용한다.
+            # 데이터를 읽어내는 위치도 조절할 수 있다.
+            file.seek(0) # 파일의 처음으로 커서를 이동. 파일을 새로운 내용으로 '덮어쓰기'
+            json.dump(data, file, indent=4) # 수정된 data를 다시 JSON 형태로 파일에 쓴다.
+            file.truncate() # 파일의 현재 위치 이후의 내용을 삭제한다. "이전 파일을 삭제할까요?"의 느낌
     except FileNotFoundError:
         print("파일을 찾지 못함")
-        create_json({})
+        create_json({}) # 파일이 없을 경우 새로운 파일을 생성 // 상당히 절차적인 모습이다.
