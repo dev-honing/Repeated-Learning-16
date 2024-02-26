@@ -114,5 +114,17 @@ if __name__ == "__main__":
 
     # Delete 예제: 아이템 삭제
     def remove_item(data):
+        # 아래의 for in문을 JavaScript 방식으로 바꾸어 설명하면,
+        # for (let item of data.items) {
+        #     if (item.name === "BHN") {
+        #         data.items.splice(data.items.indexOf(item), 1);
+        #         break;
+        #     }
+        # }
+        # 이며, Python의 반복문은 for in 문법을 사용하고, 다른 방식의 반복문을 사용하지 않는다.
+        # JavaScript는 for in 문법을 지원하지만 잘 사용하지 않는데, Python은 주로 for in 문법을 사용한다.
+        # Python은 반복문의 종류가 for in, while로 두 가지 뿐이다.
+        # 반복문이 일관되어 '가독성'이 좋지만, JavaScript의 풍부한 반복문 지원보다는 편의성 면에서 떨어진다.
+
         data["items"] = [item for item in data["items"] if item["name"] != "BHN"]
     delete_json(remove_item) # JSON 파일 삭제
