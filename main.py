@@ -21,3 +21,9 @@ def create_json(data):
         # json.dump 메서드는 Python 데이터를 JSON 형식의 문자열로 변환해 파일에 쓴다.
         # 여기서는 data 변수의 내용을 JSON 형태로 파일에 저장한다.
         json.dump(data, file, indent=4)
+
+# json에 추가할 데이터 변수 선언
+data_to_write = {"name": "BHN", "birth": 1997, "age": 26, "city": "Daejeon"}
+
+# create_json 함수 호출 및 데이터 추가
+create_json(data_to_write)
