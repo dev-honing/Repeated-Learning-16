@@ -12,7 +12,8 @@ def update_function(data):
     data.clear()
     data.update({"os": "Windows"})
 
-# def delete_function(data):
+def delete_function(data):
+    data.clear()
 
 
 # JSON 생성 함수
@@ -30,6 +31,7 @@ data_to_write = {"name": "BHN", "birth": 1997, "age": 26, "city": "Daejeon"}
 # create_json 함수 호출 및 데이터 추가
 create_json(data_to_write)
 
+# JSON 읽기 함수
 def read_json():
     try:
         # 'r' 모드는 파일을 읽기 위해 쓴다.
@@ -55,6 +57,7 @@ else:
     # 파일이 존재하지 않는 경우
     print("파일이 없음")
 
+# JSON 업데이트 함수
 def update_json(update_function):
     try: 
         # 'r+' 모드는 읽기와 쓰기를 모두 할 수 있는 모드로, 권한이 많기 때문에 남용하면 위험하다.
@@ -74,6 +77,7 @@ def update_json(update_function):
 # update_json 함수 호출 및 데이터 업데이트
 update_json(update_function)
 
+# JSON 삭제 함수
 def delete_json(delete_function):
     try:
         with open(file_path, 'r+') as file:
@@ -86,4 +90,4 @@ def delete_json(delete_function):
         print("파일을 찾지 못함")
 
 # delete_json 함수 호출 및 데이터 삭제
-# delete_json(delete_function)
+delete_json(delete_function)
