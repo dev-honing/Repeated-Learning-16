@@ -111,3 +111,8 @@ if __name__ == "__main__":
 
     # Read 예제
     print(read_json()) # JSON 파일 읽기
+
+    # Delete 예제: 아이템 삭제
+    def remove_item(data):
+        data["items"] = [item for item in data["items"] if item["name"] != "BHN"]
+    delete_json(remove_item) # JSON 파일 삭제
