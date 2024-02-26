@@ -7,4 +7,4 @@ for item in list:
 # 딕셔너리
 dict = {'name': 'BHN', 'birth': 1997, 'age': 26, 'city': 'Daejeon'}
 for key, value in dict.items():
-    print(key, value)
+    print(f"{key}: {value}")
