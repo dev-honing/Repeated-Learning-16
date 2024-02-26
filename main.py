@@ -29,7 +29,7 @@ def create_json(data):
 data_to_write = {"name": "BHN", "birth": 1997, "age": 26, "city": "Daejeon"}
 
 # create_json 함수 호출 및 데이터 추가
-# create_json(data_to_write)
+create_json(data_to_write)
 
 def read_json():
     try:
@@ -51,7 +51,7 @@ json_data = read_json()
 # JSON 데이터가 None이 아닌 경우
 if json_data is not None:
     # JSON 데이터 출력
-    print(json_data)
+    print(json_data) # {'name': 'BHN', 'birth': 1997, 'age': 26, 'city': 'Daejeon'}
 else: 
     # 파일이 존재하지 않는 경우
     print("파일이 없음")
