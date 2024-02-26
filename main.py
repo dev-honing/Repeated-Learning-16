@@ -9,8 +9,7 @@ file_path = 'data/data.json'
 
 # 함수 작성해보기
 def update_function(data):
-    # 내용
-    return
+    data.clear()
 
 def delete_function(data):
     # 내용
@@ -71,3 +70,6 @@ def update_json(update_function):
     except FileNotFoundError:
         print("파일을 찾지 못함")
         create_json({}) # 파일이 없을 경우 새로운 파일을 생성 // 상당히 절차적인 모습이다.
+
+# update_json 함수 호출 및 데이터 업데이트
+update_json(update_function)
