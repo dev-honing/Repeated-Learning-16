@@ -127,4 +127,8 @@ if __name__ == "__main__":
         # 반복문이 일관되어 '가독성'이 좋지만, JavaScript의 풍부한 반복문 지원보다는 편의성 면에서 떨어진다.
 
         data["items"] = [item for item in data["items"] if item["name"] != "BHN"]
+
     delete_json(remove_item) # JSON 파일 삭제
+
+    # 변경된 데이터 확인
+    print(read_json()) #JSON 파일 읽기
