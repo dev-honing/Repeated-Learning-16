@@ -73,3 +73,14 @@ def update_json(update_function):
 
 # update_json 함수 호출 및 데이터 업데이트
 update_json(update_function)
+
+def delete_json(delete_function):
+    try:
+        with open(file_path, 'r+') as file:
+            data =json.load(file)
+            delete_function(data)
+            file.seek(0)
+            json.dump(data, file, indent=4)
+            file.truncate()
+    except FileNotFoundError:
+        print("파일을 찾지 못함")
